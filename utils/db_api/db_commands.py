@@ -6,7 +6,7 @@ from typing import List
 
 from .database import db
 from sqlalchemy import and_, sql, not_, create_engine, select, distinct, except_, func
-from .models import User, Region, District, School, Classroom, Quiz
+from .models import User, Region, District, School, Classroom, Quiz, Subscribe, Finance
 from sqlalchemy.orm import Session, session
 from data.config import POSTGRES_URI
 import random
@@ -30,6 +30,21 @@ class DBCommands:
         user = await User.query.where(and_(User.user_id == user_id, User.ban == True)).gino.first()
         if user:
             return False
+
+    async def add_one_subscribe(self, user_id, other_id, other_photo, other_name, other_lang, question):
+        sub = Subscribe()
+        sub.user_id = user_id
+        sub.other_id = other_id
+        sub.other_photo = other_photo
+        sub.other_name = other_name
+        sub.other_lang = other_lang
+        sub.question = question
+        await sub.create()
+
+    async def get_one_answer(self, user_id) -> Subscribe:
+        answer = await Subscribe.query.where(Subscribe.user_id == user_id).gino.first()
+        return answer
+
 
     async def add_new_user(self, ref=None, refferal=None) -> User:
         user = types.User.get_current()
@@ -85,10 +100,19 @@ class DBCommands:
 
     async def count_rooms(self, room):
         rooms = await select([User.classroom]).where(User.classroom == room).gino.all()
-        if len(rooms) >= 2:
+        if len(rooms) >= 1:
             return rooms
         else:
             return 0
+
+    async def finance(self, full_name, user_id, amount, type):
+        finance = Finance()
+        finance.user_id = user_id
+        finance.full_name = full_name
+        finance.type = type
+        finance.amount = amount
+        await finance.create()
+
     async def get_classmates_for_quiz1(self, school, number):
         classmates = await select([User.classroom]).distinct().where(and_(User.school == school, User.classroom.like(f"%{number}%"))).gino.all()
         return classmates
@@ -215,7 +239,6 @@ class DBCommands:
         user_id = types.User.get_current().id
         classmates = await select(User).where(and_(User.school == school, User.classroom == number, User.user_id != user_id)).gino.all()
         return classmates
-
 
 
 

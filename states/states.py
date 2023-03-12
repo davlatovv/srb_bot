@@ -26,3 +26,7 @@ class Quiz(StatesGroup):
     start = State()
     school = State()
 
+
+class PaymentStates(StatesGroup):
+    monthly = State()
+    daily = State()

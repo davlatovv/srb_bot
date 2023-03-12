@@ -63,7 +63,6 @@ class Classroom(db.Model):
     __tablename__ = "classroom"
     id = Column(Integer, primary_key=True, autoincrement=True)
     number = Column(String(50))
-    language = Column(String(2))
     school_id = Column(Integer, ForeignKey('school.id'))
     school = relationship("School")
     query: sql.Select
@@ -75,6 +74,28 @@ class Quiz(db.Model):
     question = Column(String(250))
     language = Column(String(2))
     classes = Column(String(2))
+    query: sql.Select
+
+
+class Finance(db.Model):
+    __tablename__ = "finance"
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    user_id = Column(BigInteger)
+    full_name = Column(String(255))
+    amount = Column(BigInteger)
+    type = Column(String(10))
+    query: sql.Select
+
+
+class Subscribe(db.Model):
+    __tablename__ = "subscribe"
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    user_id = Column(BigInteger)
+    other_id = Column(BigInteger)
+    other_photo = Column(String(150))
+    other_name = Column(String(100))
+    other_lang = Column(String(2))
+    question = Column(String(100))
     query: sql.Select
 
 

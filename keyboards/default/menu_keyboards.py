@@ -91,6 +91,15 @@ def classes(lang):
         ], resize_keyboard=True)
     return classess
 
+def one_day(lang):
+    one = ReplyKeyboardMarkup(
+        keyboard=[
+            [KeyboardButton(text=_("Хочу", locale=lang)), ],
+            [KeyboardButton(text=_("Не хочу", locale=lang)), ],
+        ], resize_keyboard=True)
+    return one
+
+
 
 def quiz(classmates, num, bool=False):
     people = ReplyKeyboardMarkup(resize_keyboard=True)
@@ -98,175 +107,200 @@ def quiz(classmates, num, bool=False):
     if len(classmates) <= 4:
         for i in classmates:
             people.add(KeyboardButton(text=i))
+        people.add(_("⬅️В главное меню"))
         return people
     elif num == 1:
         for i in classmates[:4]:
             people.add(KeyboardButton(text=i))
-        people.add('️Далее➡️')
+        people.add(_('️Далее➡️'))
+        people.add(_("⬅️В главное меню"))
         return people
     elif num == 2:
         if len(classmates[4:8]) != 4:
             for i in classmates[-ostatok:]:
                 people.add(KeyboardButton(text=i))
             people.add('Назад⬅️')
+            people.add(_("⬅️В главное меню"))
             return people
         else:
             for i in classmates[4:8]:
                 people.add(KeyboardButton(text=i))
             if ostatok == 0 and bool == True:
                 people.add('Назад⬅️')
+                people.add(_("⬅️В главное меню"))
             else:
                 people.add(KeyboardButton('Назад⬅️'), KeyboardButton('️Далее➡️'))
+                people.add(_("⬅️В главное меню"))
             return people
     elif num == 3:
         if len(classmates[8:12]) != 4:
             for i in classmates[-ostatok:]:
                 people.add(KeyboardButton(text=i))
             people.add('Назад⬅️')
+            people.add(_("⬅️В главное меню"))
             return people
         else:
             for i in classmates[8:12]:
                 people.add(KeyboardButton(text=i))
             if ostatok == 0 and bool == True:
                 people.add('Назад⬅️')
+                people.add(_("⬅️В главное меню"))
             else:
-                people.add('️Далее➡️')
-                people.add('Назад⬅️')
+                people.add(KeyboardButton('Назад⬅️'), KeyboardButton('️Далее➡️'))
+                people.add(_("⬅️В главное меню"))
             return people
     elif num == 4:
         if len(classmates[12:16]) != 4:
             for i in classmates[-ostatok:]:
                 people.add(KeyboardButton(text=i))
             people.add('Назад⬅️')
+            people.add(_("⬅️В главное меню"))
             return people
         else:
             for i in classmates[12:16]:
                 people.add(KeyboardButton(text=i))
             if ostatok == 0 and bool == True:
                 people.add('Назад⬅️')
+                people.add(_("⬅️В главное меню"))
             else:
-                people.add('️Далее➡️')
-                people.add('Назад⬅️')
+                people.add(KeyboardButton('Назад⬅️'), KeyboardButton('️Далее➡️'))
+                people.add(_("⬅️В главное меню"))
             return people
     elif num == 5:
         if len(classmates[16:20]) != 4:
             for i in classmates[-ostatok:]:
                 people.add(KeyboardButton(text=i))
             people.add('Назад⬅️')
+            people.add(_("⬅️В главное меню"))
             return people
         else:
             for i in classmates[16:20]:
                 people.add(KeyboardButton(text=i))
             if ostatok == 0 and bool == True:
                 people.add('Назад⬅️')
+                people.add(_("⬅️В главное меню"))
             else:
-                people.add('️Далее➡️')
-                people.add('Назад⬅️')
+                people.add(KeyboardButton('Назад⬅️'), KeyboardButton('️Далее➡️'))
+                people.add(_("⬅️В главное меню"))
             return people
     elif num == 6:
         if len(classmates[20:24]) != 4:
             for i in classmates[-ostatok:]:
                 people.add(KeyboardButton(text=i))
             people.add('Назад⬅️')
+            people.add(_("⬅️В главное меню"))
             return people
         else:
             for i in classmates[20:24]:
                 people.add(KeyboardButton(text=i))
             if ostatok == 0 and bool == True:
                 people.add('Назад⬅️')
+                people.add(_("⬅️В главное меню"))
             else:
-                people.add('️Далее➡️')
-                people.add('Назад⬅️')
+                people.add(KeyboardButton('Назад⬅️'), KeyboardButton('️Далее➡️'))
+                people.add(_("⬅️В главное меню"))
             return people
     elif num == 7:
         if len(classmates[24:28]) != 4:
             for i in classmates[-ostatok:]:
                 people.add(KeyboardButton(text=i))
             people.add('Назад⬅️')
+            people.add(_("⬅️В главное меню"))
             return people
         else:
             for i in classmates[24:28]:
                 people.add(KeyboardButton(text=i))
             if ostatok == 0 and bool == True:
                 people.add('Назад⬅️')
+                people.add(_("⬅️В главное меню"))
             else:
-                people.add('️Далее➡️')
-                people.add('Назад⬅️')
+                people.add(KeyboardButton('Назад⬅️'), KeyboardButton('️Далее➡️'))
+                people.add(_("⬅️В главное меню"))
             return people
     elif num == 8:
         if len(classmates[28:32]) != 4:
             for i in classmates[-ostatok:]:
                 people.add(KeyboardButton(text=i))
             people.add('Назад⬅️')
+            people.add(_("⬅️В главное меню"))
             return people
         else:
             for i in classmates[28:32]:
                 people.add(KeyboardButton(text=i))
             if ostatok == 0 and bool == True:
                 people.add('Назад⬅️')
+                people.add(_("⬅️В главное меню"))
             else:
-                people.add('️Далее➡️')
-                people.add('Назад⬅️')
+                people.add(KeyboardButton('Назад⬅️'), KeyboardButton('️Далее➡️'))
+                people.add(_("⬅️В главное меню"))
             return people
     elif num == 9:
         if len(classmates[32:36]) != 4:
             for i in classmates[-ostatok:]:
                 people.add(KeyboardButton(text=i))
             people.add('Назад⬅️')
+            people.add(_("⬅️В главное меню"))
             return people
         else:
             for i in classmates[32:36]:
                 people.add(KeyboardButton(text=i))
             if ostatok == 0 and bool == True:
                 people.add('Назад⬅️')
+                people.add(_("⬅️В главное меню"))
             else:
-                people.add('️Далее➡️')
-                people.add('Назад⬅️')
+                people.add(KeyboardButton('Назад⬅️'), KeyboardButton('️Далее➡️'))
+                people.add(_("⬅️В главное меню"))
             return people
     elif num == 10:
         if len(classmates[36:40]) != 4:
             for i in classmates[-ostatok:]:
                 people.add(KeyboardButton(text=i))
             people.add('Назад⬅️')
+            people.add(_("⬅️В главное меню"))
             return people
         else:
             for i in classmates[36:40]:
                 people.add(KeyboardButton(text=i))
             if ostatok == 0 and bool == True:
                 people.add('Назад⬅️')
+                people.add(_("⬅️В главное меню"))
             else:
-                people.add('️Далее➡️')
-                people.add('Назад⬅️')
+                people.add(KeyboardButton('Назад⬅️'), KeyboardButton('️Далее➡️'))
+                people.add(_("⬅️В главное меню"))
             return people
     elif num == 11:
         if len(classmates[40:44]) != 4:
             for i in classmates[-ostatok:]:
                 people.add(KeyboardButton(text=i))
             people.add('Назад⬅️')
+            people.add(_("⬅️В главное меню"))
             return people
         else:
             for i in classmates[40:44]:
                 people.add(KeyboardButton(text=i))
             if ostatok == 0 and bool == True:
                 people.add('Назад⬅️')
+                people.add(_("⬅️В главное меню"))
             else:
-                people.add('️Далее➡️')
-                people.add('Назад⬅️')
+                people.add(KeyboardButton('Назад⬅️'), KeyboardButton('️Далее➡️'))
+                people.add(_("⬅️В главное меню"))
             return people
     elif num == 12:
         if len(classmates[44:48]) != 4:
             for i in classmates[-ostatok:]:
                 people.add(KeyboardButton(text=i))
             people.add('Назад⬅️')
+            people.add(_("⬅️В главное меню"))
             return people
         else:
             for i in classmates[44:48]:
                 people.add(KeyboardButton(text=i))
             if ostatok == 0 and bool == True:
                 people.add('Назад⬅️')
+                people.add(_("⬅️В главное меню"))
             else:
-                people.add('️Далее➡️')
-                people.add('Назад⬅️')
+                people.add(KeyboardButton('Назад⬅️'), KeyboardButton('️Далее➡️'))
+                people.add(_("⬅️В главное меню"))
             return people
 
 

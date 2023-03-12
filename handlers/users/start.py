@@ -50,18 +50,7 @@ async def register_user(message: Message, state: FSMContext):
             await state.reset_state()
             await message.answer(text, reply_markup=languages_markup)
         else:
-            await message.answer(_("Главное меню"), reply_markup=get_main_menu_keyboard(user.language))
-
-
-# @dp.callback_query_handler(text_contains="lang")
-# async def change_language(call: CallbackQuery):
-#     await call.message.edit_reply_markup()
-#     lang = call.data[-2:]
-#     logging.info(lang)
-#     await db.set_language(lang)
-#     await call.message.answer(_("Thank you! Lets start to registration. Please enter your name ", locale=lang), reply_markup=get_main_menu_keyboard(lang))
-    # await call.message.answer(_("Thank you! Here's our Main Menu", locale=lang))
-#
+            await message.answer(_("🗄Главное меню:"), reply_markup=get_main_menu_keyboard(user.language))
 
 
 

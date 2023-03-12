@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-02-28 17:49+0500\n"
+"POT-Creation-Date: 2023-03-05 13:36+0500\n"
 "PO-Revision-Date: 2023-01-30 01:26+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uz\n"
@@ -24,11 +24,11 @@ msgstr ""
 
 #: app.py:25
 msgid "Ваша подписка истекла!"
-msgstr ""
+msgstr "Обунангиз муддати тугади!"
 
 #: handlers/users/authorization.py:78
 msgid "✒️Введите свое имя и фамилию на кириллице:"
-msgstr "✒️Исмингизни ва фамилиянгизни кирилл алифбосида киритинг:"
+msgstr "✒️Исмингизни ва фамилиянгизни кирилл алифбосида киритинг:(мисол учун: Азизов Азиз)"
 
 #: handlers/users/authorization.py:87
 msgid "Пожалуйста введите иимя и фамилию без чисел"
@@ -38,13 +38,10 @@ msgstr "Илтимос, фамилиянгизни рақамларсиз кир
 msgid "Пожалуйста введите имя и фамилию на кириллице"
 msgstr "Илтимос, фамилиянгизни кирилл алифбосида киритинг"
 
-#: handlers/users/authorization.py:95
-msgid "✒️Введите свой никнейм:"
-msgstr "✒️Тахаллусингизни киритинг:"
-
-#: handlers/users/authorization.py:103
-msgid "Введите никнейм в нижнем регистре и с латинскими буквами"
-msgstr ""
+#: handlers/users/authorization.py:95 handlers/users/authorization.py:103
+#: handlers/users/menu.py:100
+msgid "✒️Введите свой никнейм: (например: trippieredd34)"
+msgstr "✒️Тахаллусингизни киритинг:(мисол учун: trippieredd34)"
 
 #: handlers/users/authorization.py:108
 msgid "🗒Введите свою дату рождения (дд.мм.гггг):"
@@ -76,10 +73,10 @@ msgstr "👨🏻👩🏻Жинсингизни белгиланг:"
 
 #: handlers/users/authorization.py:138
 msgid "Вам нет полных 12, будем ждать позже"
-msgstr ""
+msgstr "Сиз 12 ёшдан кичиксиз, кейинроқ кутамиз"
 
 #: handlers/users/authorization.py:140
-msgid "Упс! Видимо вы давно окончили школу, и данный бот не для вас)"
+msgid "Упс! Видимо вы давно окончили школу, и данный бот не для вас"
 msgstr "Вой! Еҳтимол, сиз мактабни анча олдин тугатгансиз ва бу бот сиз учун емас)"
 
 #: handlers/users/authorization.py:158
@@ -88,7 +85,7 @@ msgstr "🗺Ҳудудингизни белгиланг:"
 
 #: handlers/users/authorization.py:161
 msgid "📌Используйте кнопки, чтобы управлять ботом👇"
-msgstr ""
+msgstr "📌Ботни бошқариш учун тугмалардан фойдаланинг👇"
 
 #: handlers/users/authorization.py:175
 msgid "🌆Укажите город или район:"
@@ -106,6 +103,14 @@ msgstr "🏛Синфингизни белгиланг:"
 msgid "🖼Добавьте свое фото:"
 msgstr "🖼Расмингизни қўшинг:"
 
+#: handlers/users/authorization.py:226
+msgid "Да"
+msgstr "Ха"
+
+#: handlers/users/authorization.py:226
+msgid "Нет"
+msgstr "Йoқ"
+
 #: handlers/users/authorization.py:227
 msgid "😉Начинаем опрос?"
 msgstr "😉 Сўровномани бошлаймизми?"
@@ -114,30 +119,25 @@ msgstr "😉 Сўровномани бошлаймизми?"
 msgid "Что-то пошло не так, попытайтесь снова"
 msgstr ""
 
-#: handlers/users/authorization.py:246 handlers/users/menu.py:265
-#: handlers/users/menu.py:301
+#: handlers/users/authorization.py:246 handlers/users/menu.py:225
+#: handlers/users/menu.py:276
 msgid "Выберите класс"
 msgstr "Синфни танланг"
 
 #: handlers/users/authorization.py:249 handlers/users/menu.py:25
-#: handlers/users/start.py:53
-msgid "Главное меню"
-msgstr "Асосий меню"
-
-#: handlers/users/help.py:17
-msgid "Связь с админами"
-msgstr "Админлар билан богланиш"
+#: handlers/users/menu.py:274
+msgid "🗄Главное меню:"
+msgstr "🗄Асосий меню:"
 
 #: handlers/users/menu.py:23 handlers/users/menu.py:31
 #: handlers/users/menu.py:46 handlers/users/menu.py:55
-#: handlers/users/menu.py:159
+#: handlers/users/menu.py:92 handlers/users/menu.py:162
 msgid ""
 "❌Вы заблокированы администрацией бота!\n"
 "📲Для выяснения причины свяжитесь с тех.поддержкой."
 msgstr ""
 "❌Сиз бот маъмурияти томонидан блоклангансиз!\n"
 "📲 Сабабини билиш учун техник ёрдамга мурожаат қилинг."
-
 
 #: handlers/users/menu.py:34
 msgid ""
@@ -162,29 +162,34 @@ msgid ""
 "2.Сменить фото\n"
 "3.Поменять язык"
 msgstr ""
+"Сизнинг профилингиз\n"
+"1.Тахаллусни ўзгартириш\n"
+"2.Расмни ўзгартириш\n"
+"3.Тилни ўзгартириш"
 
-#: handlers/users/menu.py:100
-msgid "Введите никнейм"
-msgstr "Тахаллус киритинг"
-
-#: handlers/users/menu.py:114
+#: handlers/users/menu.py:117
 msgid "Пришлите фото"
 msgstr "Расм юборинг"
 
-#: handlers/users/menu.py:138
+#: handlers/users/menu.py:141
 msgid "Выберите язык"
 msgstr "Тилни танланг"
 
-#: handlers/users/menu.py:162
+#: handlers/users/menu.py:165
 msgid ""
 "ℹ️Оформляя подписку «Глаз Бога», Вы действительно приобретаете Божью "
 "силу-видеть всё👀 \n"
 "У Вас появляется возможность видеть информацию обо всех, кто Вас отметил:"
 " имя, фамилия и фото профиля👤"
 msgstr ""
+"ℹ️«Ўткир кўз» обуна бўлиш орқали сиз ҳақиқатан ҳам ҳамма нарсани кўриш учун Худонинг кучига ега бўласиз👀\n"
+"Сизни белгилаган ҳар бир kishi ҳақида маълумотни кўриш имконияти мавжуд: исм, фамилия, тахаллус ва Profil фотосурати👤"
 
-#: handlers/users/menu.py:244
-#, fuzzy
+#: handlers/users/menu.py:172
+msgid "👁️Подписка уже оформлена!"
+msgstr "👁️Аллақачон обуна бўлган!"
+
+#: handlers/users/menu.py:204
 msgid ""
 "🎉Поздравляю!\n"
 "✅Вы успешно приобрели подписку!\n"
@@ -195,11 +200,11 @@ msgstr ""
 "\n"
 "Енди ботдан фойдаланиш янада ёқимли бўлади🤑"
 
-#: handlers/users/menu.py:248
+#: handlers/users/menu.py:208
 msgid "Что то пошло не так, попробуйте позже"
 msgstr "Нимадир хато кетди, кейинроқ қайта уриниб кўринг"
 
-#: handlers/users/menu.py:254
+#: handlers/users/menu.py:214
 msgid ""
 "❌Вы заблокированы администрацией бота!\n"
 "\n"
@@ -207,11 +212,12 @@ msgid ""
 msgstr ""
 "❌Сиз бот маъмурияти томонидан блоклангансиз!\n"
 "📲 Сабабини билиш учун техник ёрдамга мурожаат қилинг."
-#: handlers/users/menu.py:256
+
+#: handlers/users/menu.py:216
 msgid "✍️Введите номер школы, по ученикам которой хотите пройти опрос:"
 msgstr "✍️Ўқувчилари сўровномада қатнашмоқчи бўлган мактаб рақамини киритинг: "
 
-#: handlers/users/menu.py:270
+#: handlers/users/menu.py:230
 msgid ""
 "🤷Школы под этим номером пока нет в базе.\n"
 "➕Если хотите добавить, свяжитесь с тех.поддержкой./admins \n"
@@ -220,11 +226,16 @@ msgstr ""
 "🤷Бу рақам остидаги мактаб ҳали базада йўқ.\n"
 "➕Агар қўшмоқчи бўлсангиз, техник ёрдамга мурожаат қилинг.\n"
 "🏫Айни пайтда мактабингиздан ўтамиз."
-#: handlers/users/menu.py:356
+
+#: handlers/users/menu.py:248
+msgid "Выбор класса⬅️"
+msgstr "Синфни танланг⬅️"
+
+#: handlers/users/menu.py:331
 msgid "Этот юзер не пользуется ботом"
 msgstr "Бу юзер бот билан фойдаланмайди"
 
-#: handlers/users/menu.py:359
+#: handlers/users/menu.py:334
 msgid "✅Опрос успешно пройден!"
 msgstr "✅Сўровнома муваффақиятли якунланди!"
 
@@ -237,9 +248,12 @@ msgid "🔗Благодаря Вашей ссылке, в семье «SRB» н�
 msgstr "🔗Ҳаволангиз туфайли «SRB» оиласида янги фойдаланувчи пайдо бўлди🤩"
 
 #: handlers/users/start.py:45
-#, fuzzy
 msgid "⛔️Вы не можете перейти по собственной ссылке!"
-msgstr "Сиз ўзингизнинг ҳаволангизга амал қила олмайсиз"
+msgstr "⛔️Сиз ўзингизнинг ҳаволангизга амал қила олмайсиз"
+
+#: handlers/users/start.py:53
+msgid "🗄Главное меню:"
+msgstr "🗄Асосий меню:"
 
 #: keyboards/default/language_keyboard.py:15
 msgid "🔙 Назад"
@@ -265,6 +279,41 @@ msgstr "🏆Синф рейтинги"
 #: keyboards/default/menu_keyboards.py:51
 #: keyboards/default/menu_keyboards.py:65
 #: keyboards/default/menu_keyboards.py:75
+#: keyboards/default/menu_keyboards.py:101
+#: keyboards/default/menu_keyboards.py:107
+#: keyboards/default/menu_keyboards.py:114
+#: keyboards/default/menu_keyboards.py:121
+#: keyboards/default/menu_keyboards.py:124
+#: keyboards/default/menu_keyboards.py:131
+#: keyboards/default/menu_keyboards.py:138
+#: keyboards/default/menu_keyboards.py:141
+#: keyboards/default/menu_keyboards.py:148
+#: keyboards/default/menu_keyboards.py:155
+#: keyboards/default/menu_keyboards.py:158
+#: keyboards/default/menu_keyboards.py:165
+#: keyboards/default/menu_keyboards.py:172
+#: keyboards/default/menu_keyboards.py:175
+#: keyboards/default/menu_keyboards.py:182
+#: keyboards/default/menu_keyboards.py:189
+#: keyboards/default/menu_keyboards.py:192
+#: keyboards/default/menu_keyboards.py:199
+#: keyboards/default/menu_keyboards.py:206
+#: keyboards/default/menu_keyboards.py:209
+#: keyboards/default/menu_keyboards.py:216
+#: keyboards/default/menu_keyboards.py:223
+#: keyboards/default/menu_keyboards.py:226
+#: keyboards/default/menu_keyboards.py:233
+#: keyboards/default/menu_keyboards.py:240
+#: keyboards/default/menu_keyboards.py:243
+#: keyboards/default/menu_keyboards.py:250
+#: keyboards/default/menu_keyboards.py:257
+#: keyboards/default/menu_keyboards.py:260
+#: keyboards/default/menu_keyboards.py:267
+#: keyboards/default/menu_keyboards.py:274
+#: keyboards/default/menu_keyboards.py:277
+#: keyboards/default/menu_keyboards.py:284
+#: keyboards/default/menu_keyboards.py:291
+#: keyboards/default/menu_keyboards.py:294
 msgid "⬅️В главное меню"
 msgstr "⬅️Aсосий менюга"
 
@@ -291,6 +340,10 @@ msgstr "❓Бот ҳақида"
 #: keyboards/default/menu_keyboards.py:74
 msgid "Получить подписку"
 msgstr "Обуна олинг"
+
+#: keyboards/default/menu_keyboards.py:106
+msgid "️Далее➡️"
+msgstr "Кейингиси➡️"
 
 #: venv/Lib/site-packages/django/contrib/admin/actions.py:54
 #, python-format
@@ -3449,4 +3502,13 @@ msgstr ""
 #~ "\n"
 #~ "А пока давайте пройдем по вашей школе"
 #~ msgstr ""
+
+#~ msgid "Введите никнейм в нижнем регистре и с латинскими буквами"
+#~ msgstr ""
+
+#~ msgid "Связь с админами"
+#~ msgstr "Админлар билан богланиш"
+
+#~ msgid "Введите никнейм"
+#~ msgstr "Тахаллус киритинг"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-02-28 17:49+0500\n"
+"POT-Creation-Date: 2023-03-05 13:36+0500\n"
 "PO-Revision-Date: 2023-01-30 01:26+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -39,12 +39,9 @@ msgstr ""
 msgid "Пожалуйста введите имя и фамилию на кириллице"
 msgstr ""
 
-#: handlers/users/authorization.py:95
-msgid "✒️Введите свой никнейм:"
-msgstr ""
-
-#: handlers/users/authorization.py:103
-msgid "Введите никнейм в нижнем регистре и с латинскими буквами"
+#: handlers/users/authorization.py:95 handlers/users/authorization.py:103
+#: handlers/users/menu.py:100
+msgid "✒️Введите свой никнейм: (например: trippieredd34)"
 msgstr ""
 
 #: handlers/users/authorization.py:108
@@ -78,7 +75,7 @@ msgid "Вам нет полных 12, будем ждать позже"
 msgstr ""
 
 #: handlers/users/authorization.py:140
-msgid "Упс! Видимо вы давно окончили школу, и данный бот не для вас)"
+msgid "Упс! Видимо вы давно окончили школу, и данный бот не для вас"
 msgstr ""
 
 #: handlers/users/authorization.py:158
@@ -105,6 +102,14 @@ msgstr ""
 msgid "🖼Добавьте свое фото:"
 msgstr ""
 
+#: handlers/users/authorization.py:226
+msgid "Да"
+msgstr ""
+
+#: handlers/users/authorization.py:226
+msgid "Нет"
+msgstr ""
+
 #: handlers/users/authorization.py:227
 msgid "😉Начинаем опрос?"
 msgstr ""
@@ -113,23 +118,19 @@ msgstr ""
 msgid "Что-то пошло не так, попытайтесь снова"
 msgstr ""
 
-#: handlers/users/authorization.py:246 handlers/users/menu.py:265
-#: handlers/users/menu.py:301
+#: handlers/users/authorization.py:246 handlers/users/menu.py:225
+#: handlers/users/menu.py:276
 msgid "Выберите класс"
 msgstr ""
 
 #: handlers/users/authorization.py:249 handlers/users/menu.py:25
-#: handlers/users/start.py:53
-msgid "Главное меню"
-msgstr ""
-
-#: handlers/users/help.py:17
-msgid "Связь с админами"
-msgstr ""
+#: handlers/users/menu.py:274
+msgid "🗄Главное меню:"
+msgstr "🗄Aсосий меню:"
 
 #: handlers/users/menu.py:23 handlers/users/menu.py:31
 #: handlers/users/menu.py:46 handlers/users/menu.py:55
-#: handlers/users/menu.py:159
+#: handlers/users/menu.py:92 handlers/users/menu.py:162
 msgid ""
 "❌Вы заблокированы администрацией бота!\n"
 "📲Для выяснения причины свяжитесь с тех.поддержкой."
@@ -159,19 +160,15 @@ msgid ""
 "3.Поменять язык"
 msgstr ""
 
-#: handlers/users/menu.py:100
-msgid "Введите никнейм"
-msgstr ""
-
-#: handlers/users/menu.py:114
+#: handlers/users/menu.py:117
 msgid "Пришлите фото"
 msgstr ""
 
-#: handlers/users/menu.py:138
+#: handlers/users/menu.py:141
 msgid "Выберите язык"
 msgstr ""
 
-#: handlers/users/menu.py:162
+#: handlers/users/menu.py:165
 msgid ""
 "ℹ️Оформляя подписку «Глаз Бога», Вы действительно приобретаете Божью "
 "силу-видеть всё👀 \n"
@@ -179,40 +176,48 @@ msgid ""
 " имя, фамилия и фото профиля👤"
 msgstr ""
 
-#: handlers/users/menu.py:244
+#: handlers/users/menu.py:172
+msgid "👁️Подписка уже оформлена!"
+msgstr ""
+
+#: handlers/users/menu.py:204
 msgid ""
 "🎉Поздравляю!\n"
 "✅Вы успешно приобрели подписку!\n"
 "Теперь пользоваться ботом будет еще приятнее🤑"
 msgstr ""
 
-#: handlers/users/menu.py:248
+#: handlers/users/menu.py:208
 msgid "Что то пошло не так, попробуйте позже"
 msgstr ""
 
-#: handlers/users/menu.py:254
+#: handlers/users/menu.py:214
 msgid ""
 "❌Вы заблокированы администрацией бота!\n"
 "\n"
 "📲Для выяснения причины свяжитесь с тех.поддержкой."
 msgstr ""
 
-#: handlers/users/menu.py:256
+#: handlers/users/menu.py:216
 msgid "✍️Введите номер школы, по ученикам которой хотите пройти опрос:"
 msgstr ""
 
-#: handlers/users/menu.py:270
+#: handlers/users/menu.py:230
 msgid ""
 "🤷Школы под этим номером пока нет в базе.\n"
 "➕Если хотите добавить, свяжитесь с тех.поддержкой./admins \n"
 "🏫А пока пройдём по Вашей школе."
 msgstr ""
 
-#: handlers/users/menu.py:356
+#: handlers/users/menu.py:248
+msgid "Выбор класса⬅️"
+msgstr ""
+
+#: handlers/users/menu.py:331
 msgid "Этот юзер не пользуется ботом"
 msgstr ""
 
-#: handlers/users/menu.py:359
+#: handlers/users/menu.py:334
 msgid "✅Опрос успешно пройден!"
 msgstr ""
 
@@ -227,6 +232,10 @@ msgstr ""
 #: handlers/users/start.py:45
 msgid "⛔️Вы не можете перейти по собственной ссылке!"
 msgstr ""
+
+#: handlers/users/start.py:53
+msgid "🗄Главное меню:"
+msgstr "🗄Aсосий меню:"
 
 #: keyboards/default/language_keyboard.py:15
 msgid "🔙 Назад"
@@ -252,8 +261,43 @@ msgstr ""
 #: keyboards/default/menu_keyboards.py:51
 #: keyboards/default/menu_keyboards.py:65
 #: keyboards/default/menu_keyboards.py:75
+#: keyboards/default/menu_keyboards.py:101
+#: keyboards/default/menu_keyboards.py:107
+#: keyboards/default/menu_keyboards.py:114
+#: keyboards/default/menu_keyboards.py:121
+#: keyboards/default/menu_keyboards.py:124
+#: keyboards/default/menu_keyboards.py:131
+#: keyboards/default/menu_keyboards.py:138
+#: keyboards/default/menu_keyboards.py:141
+#: keyboards/default/menu_keyboards.py:148
+#: keyboards/default/menu_keyboards.py:155
+#: keyboards/default/menu_keyboards.py:158
+#: keyboards/default/menu_keyboards.py:165
+#: keyboards/default/menu_keyboards.py:172
+#: keyboards/default/menu_keyboards.py:175
+#: keyboards/default/menu_keyboards.py:182
+#: keyboards/default/menu_keyboards.py:189
+#: keyboards/default/menu_keyboards.py:192
+#: keyboards/default/menu_keyboards.py:199
+#: keyboards/default/menu_keyboards.py:206
+#: keyboards/default/menu_keyboards.py:209
+#: keyboards/default/menu_keyboards.py:216
+#: keyboards/default/menu_keyboards.py:223
+#: keyboards/default/menu_keyboards.py:226
+#: keyboards/default/menu_keyboards.py:233
+#: keyboards/default/menu_keyboards.py:240
+#: keyboards/default/menu_keyboards.py:243
+#: keyboards/default/menu_keyboards.py:250
+#: keyboards/default/menu_keyboards.py:257
+#: keyboards/default/menu_keyboards.py:260
+#: keyboards/default/menu_keyboards.py:267
+#: keyboards/default/menu_keyboards.py:274
+#: keyboards/default/menu_keyboards.py:277
+#: keyboards/default/menu_keyboards.py:284
+#: keyboards/default/menu_keyboards.py:291
+#: keyboards/default/menu_keyboards.py:294
 msgid "⬅️В главное меню"
-msgstr ""
+msgstr "⬅️Aсосий менюга"
 
 #: keyboards/default/menu_keyboards.py:29
 msgid "🟢Начать опрос"
@@ -277,6 +321,10 @@ msgstr ""
 
 #: keyboards/default/menu_keyboards.py:74
 msgid "Получить подписку"
+msgstr ""
+
+#: keyboards/default/menu_keyboards.py:106
+msgid "️Далее➡️"
 msgstr ""
 
 #: venv/Lib/site-packages/django/contrib/admin/actions.py:54
@@ -3498,5 +3546,20 @@ msgstr ""
 #~ "с админом при помощи команды /admins"
 #~ "\n"
 #~ "А пока давайте пройдем по вашей школе"
+#~ msgstr ""
+
+#~ msgid "✒️Введите свой никнейм:"
+#~ msgstr ""
+
+#~ msgid "Введите никнейм в нижнем регистре и с латинскими буквами"
+#~ msgstr ""
+
+#~ msgid "Упс! Видимо вы давно окончили школу, и данный бот не для вас)"
+#~ msgstr ""
+
+#~ msgid "Связь с админами"
+#~ msgstr ""
+
+#~ msgid "Введите никнейм"
 #~ msgstr ""
 

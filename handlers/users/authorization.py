@@ -17,8 +17,6 @@ db = DBCommands()
 
 
 def match_nick(text, alphabet=set('абвгдеёжзийклмнопрстуфхцчшщъыьэюя')):
-    if not text.islower():
-        return True
     return not alphabet.isdisjoint(text.lower())
 
 
@@ -75,7 +73,7 @@ async def change_language(call: CallbackQuery):
 
 🙌Кейинчалик ҳаммаси батафсил баён қилинади.
 Вақтингиз яхши ўтсин!😉""")
-    await call.message.answer(_("✒️Введите свое имя и фамилию на кириллице:", locale=lang))
+    await call.message.answer(_("✒️Введите свое имя и фамилию на кириллице: (например:Азизов Азиз)", locale=lang))
     await call.answer(cache_time=1)
     await Auth.full_name.set()
 
@@ -92,23 +90,20 @@ async def get_name(message: types.Message, state: FSMContext):
     else:
         await db.set_full_name(name)
         await state.update_data(name=name)
-        await message.answer(text=_("✒️Введите свой никнейм:"))
+        await message.answer(text=_("✒️Введите свой никнейм: (например: trippieredd34)"))
         await Auth.nickname.set()
 
 
 @dp.message_handler(state=Auth.nickname)
 async def get_surname(message: types.Message, state: FSMContext):
     nickname = message.text
-    if match_nick(nickname) == True:
-        await message.answer(_("Введите никнейм в нижнем регистре и с латинскими буквами"))
-    else:
-        try:
-            await db.set_nickname(nickname)
-            await state.update_data(nickname=nickname)
-            await message.answer(text=_("🗒Введите свою дату рождения (дд.мм.гггг):"))
-            await Auth.age.set()
-        except UniqueViolationError:
-            await message.answer(text=_("Упс! Данный никнейм уже используется другим пользователем)"))
+    try:
+        await db.set_nickname(nickname)
+        await state.update_data(nickname=nickname)
+        await message.answer(text=_("🗒Введите свою дату рождения (дд.мм.гггг):"))
+        await Auth.age.set()
+    except UniqueViolationError:
+        await message.answer(text=_("Упс! Данный никнейм уже используется другим пользователем)"))
 
 
 
@@ -137,7 +132,7 @@ async def get_age(message: types.Message, state: FSMContext):
         elif calculate_age(age) == 0:
             await message.answer(text=_("Вам нет полных 12, будем ждать позже"))
         else:
-            await message.answer(text=_("Упс! Видимо вы давно окончили школу, и данный бот не для вас)"))
+            await message.answer(text=_("Упс! Видимо вы давно окончили школу, и данный бот не для вас"))
     except ValueError:
         await message.answer(text=_("Упс! Кажется вы неверно ввели дату рождения, попробуйте еще раз в таком формате (дд.мм.гггг)"))
 
@@ -223,12 +218,13 @@ async def get_photo(message: types.Message, state: FSMContext):
         await db.set_photo(photo)
         user = await db.get_user(message.from_user.id)
         repl = ReplyKeyboardMarkup(resize_keyboard=True)
-        repl.add(types.KeyboardButton('Да'), types.KeyboardButton('Нет'))
+        repl.add(types.KeyboardButton(_('Да')), types.KeyboardButton(_('Нет')))
         await message.answer(_('😉Начинаем опрос?'),reply_markup=repl)
         await Auth.finish.set()
     except:
         await message.answer(_('Что-то пошло не так, попытайтесь снова'))
         await Auth.photo.set()
+
 
 @dp.message_handler(state=Auth.finish)
 async def finish(message: types.Message, state: FSMContext):
@@ -246,7 +242,7 @@ async def finish(message: types.Message, state: FSMContext):
             await message.answer(_("Выберите класс"), reply_markup=classes(user.language))
             await Quiz.start.set()
     else:
-        await message.answer(_('Главное меню'), reply_markup=get_main_menu_keyboard(lang=user.language))
+        await message.answer(_('🗄Главное меню:'), reply_markup=get_main_menu_keyboard(lang=user.language))
         await state.finish()
 
 

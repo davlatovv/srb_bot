@@ -4,10 +4,13 @@ from aiogram import types
 from aiogram.types import ReplyKeyboardRemove
 
 from aiogram_broadcaster import MessageBroadcaster, exceptions
+from gino import Gino
+from sqlalchemy import func
 
-from data.config import admins
+from data.config import admins, ADMIN_NICK
 from loader import dp, bot
 from utils.db_api.db_commands import DBCommands
+from utils.db_api.models import Finance
 
 db = DBCommands()
 
@@ -20,6 +23,9 @@ kb = [
             types.KeyboardButton(text="Заблокировать юзера"),
             types.KeyboardButton(text="Разблокировать юзера"),
         ],
+        [
+            types.KeyboardButton(text="Общая сумма покупок"),
+        ]
 
     ]
 keyboard = types.ReplyKeyboardMarkup(
@@ -89,6 +95,12 @@ async def count_user(msg: Message, state: FSMContext):
     """)
 
 
+@dp.message_handler(text='Общая сумма покупок', user_id=admins)
+async def count_user(msg: Message, state: FSMContext):
+    db = Gino()
+    sum = await db.func.sum(Finance.amount).gino.scalar()
+    await msg.answer(f"""Сумма покупок: {format(int(float(sum)), '.')}
+    """)
 
 
 
